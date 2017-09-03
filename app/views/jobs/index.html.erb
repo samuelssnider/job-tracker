@@ -1,5 +1,13 @@
 <%= link_to "Back to All Companines", companies_path %> <br />
+<br /> All contacts for <strong><%= @company.name %></strong> <br />
 <%= link_to "Create new contact for  #{@company.name}", new_company_contact_path(@company) %> <br />
+
+<% @company.contacts.each do |contact| %>
+  <ul><%= link_to contact.full_name, company_jobs_path(@company) %> at <%= contact.company.name %> <br />
+    <%= contact.position %> <br />
+    <%= contact.email %> <br />
+  </ul>
+<% end %>
 <br /> All Jobs for <strong><%= @company.name %></strong> <br />
 <%= link_to "Create New Job for #{@company.name}", new_company_job_path(@company) %>
 
