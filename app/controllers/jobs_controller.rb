@@ -12,7 +12,6 @@ class JobsController < ApplicationController
 
   def create
     @categories = Category.all
-    @category = Category.find(params[:company_id])
     @company = Company.find(params[:company_id])
     @job = @company.jobs.new(job_params)
     if @job.save

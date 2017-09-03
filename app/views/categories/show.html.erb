@@ -1,0 +1,6 @@
+All Jobs for <strong><%= @category.title %></strong>
+
+<% @category.jobs.each do |job| %>
+  <ul><%= link_to job.title, company_jobs_path(job.company) %> at <%= job.company.name %>
+  </ul>
+<% end %>

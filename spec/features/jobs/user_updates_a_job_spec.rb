@@ -5,7 +5,7 @@ describe "User creates a new job" do
     category = Category.create(title: "Sales")
     company = Company.create!(name: "ESPN")
 		job = company.jobs.create!(title: "Mechanic", description: "working on cars",
-												 level_of_interest: 3, city: "Denver")
+												 level_of_interest: 3, city: "Denver", category_id: category.id)
     visit company_path(company)
 		click_on "Edit"
 		fill_in "job[title]", with: "Developer"

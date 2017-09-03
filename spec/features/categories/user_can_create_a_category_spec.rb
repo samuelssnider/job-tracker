@@ -6,7 +6,6 @@ describe "A user" do
 		fill_in "Title", with: "Sales"
 		click_on "Create Category"
 
-		expect(page).to have_content("All Categories:")
 		expect(page).to have_content("Sales")
 		expect(current_path).to eq("/categories/1")
 
