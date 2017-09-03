@@ -15,7 +15,7 @@ class JobsController < ApplicationController
     @company = Company.find(params[:company_id])
     @job = @company.jobs.new(job_params)
     if @job.save
-      flash[:success] = "You created #{@job.title} for #{@company.name} with the category: #{@category.title}"
+      flash[:success] = "You created #{@job.title} for #{@company.name} with the category: #{Category.find(@job.category_id).title}"
       redirect_to company_job_path(@company, @job, @category)
     else
       render :new
