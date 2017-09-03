@@ -1,5 +1,6 @@
 <%= link_to "Back to All Companines", companies_path %> <br />
-All Jobs for <strong><%= @company.name %></strong>
+<br /> All Jobs for <strong><%= @company.name %></strong> <br />
+<%= link_to "Create New Job for #{@company.name}", new_company_job_path(@company) %>
 
 <% @company.jobs.each do |job| %>
   <ul><%= link_to job.title, company_job_path(@company ,job) %> at <%= job.company.name %> <br />

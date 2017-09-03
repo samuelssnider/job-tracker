@@ -8,11 +8,11 @@ describe "When visiting a company's job show page" do
     job2 = company.jobs.create!(title: "QA Analyst", level_of_interest: 70, city: "New York City", category_id: category.id )
 
 		visit company_job_path(company, job1)
-		click_on "Create Comment"
+		click_on "Add Comment"
 		fill_in "Content", with: "Damn, that is a sweet job you might say!"
-		click on "Submit Comment"
+		click_on "Create Comment"
 
-		expect(page).to have_content("Damn, that is a sweet comment")
+		expect(page).to have_content("Damn, that is a sweet job you might say!")
 	end
 
 end
