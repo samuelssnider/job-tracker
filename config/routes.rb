@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'companies#index'
   resources :categories
   resources :companies do
+    resources :contacts, only: [:new, :create]
     resources :jobs do
       resources :comments, only: [:new, :create]
     end

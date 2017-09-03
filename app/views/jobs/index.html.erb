@@ -1,4 +1,5 @@
 <%= link_to "Back to All Companines", companies_path %> <br />
+<%= link_to "Create new contact for  #{@company.name}", new_company_contact_path(@company) %> <br />
 <br /> All Jobs for <strong><%= @company.name %></strong> <br />
 <%= link_to "Create New Job for #{@company.name}", new_company_job_path(@company) %>
 
