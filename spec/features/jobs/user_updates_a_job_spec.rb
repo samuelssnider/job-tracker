@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "User creates a new job" do
   scenario "a user can create a new job" do
+    category = Category.create(title: "Sales")
     company = Company.create!(name: "ESPN")
 		job = company.jobs.create!(title: "Mechanic", description: "working on cars",
 												 level_of_interest: 3, city: "Denver")
