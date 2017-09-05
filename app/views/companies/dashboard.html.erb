@@ -1,0 +1,8 @@
+<h1>Top companies by average level of interest</h1>
+<% @companies.top_loi.each do |company| %>
+	<%= company[0].name %> - Average: <%= company[1].to_f.round(2) %> <br />
+<% end %>
+<h1>Level of interest list</h1>
+<% @companies.loi_list.each do |loi| %>
+	Level of Interest: <%= loi[0] %> - Count: <%= loi[1] %> <br />
+	<% end %>

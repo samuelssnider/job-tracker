@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'companies#index'
+  get 'dashboard', to: 'companies#dashboard'
   resources :categories
   resources :companies do
     resources :contacts, only: [:new, :create]
