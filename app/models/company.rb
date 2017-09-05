@@ -11,4 +11,8 @@ class Company < ApplicationRecord
   def self.loi_list
     Job.group(:level_of_interest).order("count_id DESC").count(:id).sort_by { |loi, count| loi}
   end
+
+  def self.job_count_by_city
+    Job.group(:city).order("count_id DESC").count(:id).sort_by { |city, count| count}
+  end
 end

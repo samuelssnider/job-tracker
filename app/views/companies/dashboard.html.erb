@@ -5,4 +5,8 @@
 <h1>Level of interest list</h1>
 <% @companies.loi_list.each do |loi| %>
 	Level of Interest: <%= loi[0] %> - Count: <%= loi[1] %> <br />
-	<% end %>
+<% end %>
+<h1>Jobs by city list</h1>
+<% @companies.job_count_by_city.each do |city_jc| %>
+	City: <%= city_jc[0] %> - Count: <%= city_jc[1] %> <br />
+<% end %>
